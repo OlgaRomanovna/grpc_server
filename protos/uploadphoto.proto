@@ -1,0 +1,42 @@
+syntax = "proto3";
+
+import "google/protobuf/timestamp.proto";
+
+service PhotoService {
+    rpc Photo(IdRequest) returns (PhotoResponse) {}
+    rpc AddPhoto(PhotoRequest) returns (PhotoResponse) {}
+    rpc RandomPhotos(CountRequest) returns (stream PhotoResponse) {}
+    rpc UploadPhotos(stream PhotoChunk) returns (UploadStatus) {}
+}
+
+message IdRequest {
+    string id = 1;
+}
+
+message CountRequest {
+    uint32 count = 1;
+}
+
+message PhotoRequest {
+    string description = 1;
+    string content = 2;
+}
+
+message PhotoResponse {
+    string id = 1;
+    string description = 2;
+    google.protobuf.Timestamp timestamp = 3;
+    string content = 4;
+}
+
+message PhotoChunk {
+  string id = 1;
+  bytes content = 2;
+  string description = 3;
+  google.protobuf.Timestamp timestamp = 4;
+}
+
+message UploadStatus {
+  bool success = 1;
+  string message = 2;
+}
