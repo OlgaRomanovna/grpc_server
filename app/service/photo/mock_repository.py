@@ -1,5 +1,5 @@
 import random
-from typing import Iterator
+from typing import Iterator, List
 
 from pydantic import BaseModel
 

@@ -25,7 +25,7 @@ _sym_db = _symbol_database.Default()
 from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x11uploadphoto.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\x17\n\tIdRequest\x12\n\n\x02id\x18\x01 \x01(\t\"\x1d\n\x0c\x43ountRequest\x12\r\n\x05\x63ount\x18\x01 \x01(\r\"4\n\x0cPhotoRequest\x12\x13\n\x0b\x64\x65scription\x18\x01 \x01(\t\x12\x0f\n\x07\x63ontent\x18\x02 \x01(\t\"p\n\rPhotoResponse\x12\n\n\x02id\x18\x01 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x02 \x01(\t\x12-\n\ttimestamp\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0f\n\x07\x63ontent\x18\x04 \x01(\t\"m\n\nPhotoChunk\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0f\n\x07\x63ontent\x18\x02 \x01(\x0c\x12\x13\n\x0b\x64\x65scription\x18\x03 \x01(\t\x12-\n\ttimestamp\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"0\n\x0cUploadStatus\x12\x0f\n\x07success\x18\x01 \x01(\x08\x12\x0f\n\x07message\x18\x02 \x01(\t2\xc5\x01\n\x0cPhotoService\x12%\n\x05Photo\x12\n.IdRequest\x1a\x0e.PhotoResponse\"\x00\x12+\n\x08\x41\x64\x64Photo\x12\r.PhotoRequest\x1a\x0e.PhotoResponse\"\x00\x12\x31\n\x0cRandomPhotos\x12\r.CountRequest\x1a\x0e.PhotoResponse\"\x00\x30\x01\x12.\n\x0cUploadPhotos\x12\x0b.PhotoChunk\x1a\r.UploadStatus\"\x00(\x01\x62\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x11uploadphoto.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\x17\n\tIdRequest\x12\n\n\x02id\x18\x01 \x01(\t\"\x1d\n\x0c\x43ountRequest\x12\r\n\x05\x63ount\x18\x01 \x01(\r\"4\n\x0cPhotoRequest\x12\x13\n\x0b\x64\x65scription\x18\x01 \x01(\t\x12\x0f\n\x07\x63ontent\x18\x02 \x01(\t\"p\n\rPhotoResponse\x12\n\n\x02id\x18\x01 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x02 \x01(\t\x12-\n\ttimestamp\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0f\n\x07\x63ontent\x18\x04 \x01(\t\"0\n\x0cUploadStatus\x12\x0f\n\x07success\x18\x01 \x01(\x08\x12\x0f\n\x07message\x18\x02 \x01(\t2\xc7\x01\n\x0cPhotoService\x12%\n\x05Photo\x12\n.IdRequest\x1a\x0e.PhotoResponse\"\x00\x12+\n\x08\x41\x64\x64Photo\x12\r.PhotoRequest\x1a\x0e.PhotoResponse\"\x00\x12\x31\n\x0cRandomPhotos\x12\r.CountRequest\x1a\x0e.PhotoResponse\"\x00\x30\x01\x12\x30\n\x0cUploadPhotos\x12\r.PhotoRequest\x1a\r.UploadStatus\"\x00(\x01\x62\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -40,10 +40,8 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_PHOTOREQUEST']._serialized_end=162
   _globals['_PHOTORESPONSE']._serialized_start=164
   _globals['_PHOTORESPONSE']._serialized_end=276
-  _globals['_PHOTOCHUNK']._serialized_start=278
-  _globals['_PHOTOCHUNK']._serialized_end=387
-  _globals['_UPLOADSTATUS']._serialized_start=389
-  _globals['_UPLOADSTATUS']._serialized_end=437
-  _globals['_PHOTOSERVICE']._serialized_start=440
-  _globals['_PHOTOSERVICE']._serialized_end=637
+  _globals['_UPLOADSTATUS']._serialized_start=278
+  _globals['_UPLOADSTATUS']._serialized_end=326
+  _globals['_PHOTOSERVICE']._serialized_start=329
+  _globals['_PHOTOSERVICE']._serialized_end=528
 # @@protoc_insertion_point(module_scope)

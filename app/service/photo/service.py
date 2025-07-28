@@ -82,16 +82,26 @@ class PhotoService(photo_pb2_grpc.PhotoServiceServicer):
             time.sleep(1)
             yield response
 
-    def UploadPhotos(self, request_iterator, context) -> photo_pb2.UploadStatus:
+    def UploadPhotos(
+            self,
+            request_iterator: Iterator[photo_pb2.PhotoRequest],
+            context: grpc.ServicerContext,
+    ) -> photo_pb2.UploadStatus:
         try:
-            photo_model = self._repository.upload_photo(request_iterator)
+            for request in request_iterator:
+                photo = PhotoResponseModel(
+                    id=str(uuid.uuid4()),
+                    description=request.description,
+                    content=request.content,
+                    timestamp=datetime.datetime.Timestamp(),
+                )
+                self._repository.add_photo(photo)
 
             return photo_pb2.UploadStatus(
                 success=True,
-                message=f"Photo {photo_model.id} uploaded successfully"
+                message="Upload completed successfully"
             )
         except Exception as e:
-            context.set_details(str(e))
             context.set_code(grpc.StatusCode.INTERNAL)
+            context.set_details(str(e))
             return photo_pb2.UploadStatus(success=False, message=str(e))
-

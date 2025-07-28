@@ -38,18 +38,6 @@ class PhotoResponse(_message.Message):
     content: str
     def __init__(self, id: _Optional[str] = ..., description: _Optional[str] = ..., timestamp: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., content: _Optional[str] = ...) -> None: ...
 
-class PhotoChunk(_message.Message):
-    __slots__ = ("id", "content", "description", "timestamp")
-    ID_FIELD_NUMBER: _ClassVar[int]
-    CONTENT_FIELD_NUMBER: _ClassVar[int]
-    DESCRIPTION_FIELD_NUMBER: _ClassVar[int]
-    TIMESTAMP_FIELD_NUMBER: _ClassVar[int]
-    id: str
-    content: bytes
-    description: str
-    timestamp: _timestamp_pb2.Timestamp
-    def __init__(self, id: _Optional[str] = ..., content: _Optional[bytes] = ..., description: _Optional[str] = ..., timestamp: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ...) -> None: ...
-
 class UploadStatus(_message.Message):
     __slots__ = ("success", "message")
     SUCCESS_FIELD_NUMBER: _ClassVar[int]

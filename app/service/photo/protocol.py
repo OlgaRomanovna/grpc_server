@@ -1,6 +1,6 @@
 from typing import (
     Protocol,
-    Iterator,
+    Iterator, List,
 )
 
 from app.service.photo.mock_repository import PhotoResponseModel
@@ -13,4 +13,4 @@ class Repository(Protocol):
 
     def get_random_photos(self, count: int) -> Iterator[PhotoResponseModel]: ...
 
-    def upload_photo(self, chunks: Iterator[bytes]) -> PhotoResponseModel: ...
+    def upload_photos(self, photos: List[PhotoResponseModel]) -> None: ...

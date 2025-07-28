@@ -51,7 +51,7 @@ class PhotoServiceStub(object):
                 _registered_method=True)
         self.UploadPhotos = channel.stream_unary(
                 '/PhotoService/UploadPhotos',
-                request_serializer=uploadphoto__pb2.PhotoChunk.SerializeToString,
+                request_serializer=uploadphoto__pb2.PhotoRequest.SerializeToString,
                 response_deserializer=uploadphoto__pb2.UploadStatus.FromString,
                 _registered_method=True)
 
@@ -103,7 +103,7 @@ def add_PhotoServiceServicer_to_server(servicer, server):
             ),
             'UploadPhotos': grpc.stream_unary_rpc_method_handler(
                     servicer.UploadPhotos,
-                    request_deserializer=uploadphoto__pb2.PhotoChunk.FromString,
+                    request_deserializer=uploadphoto__pb2.PhotoRequest.FromString,
                     response_serializer=uploadphoto__pb2.UploadStatus.SerializeToString,
             ),
     }
@@ -213,7 +213,7 @@ class PhotoService(object):
             request_iterator,
             target,
             '/PhotoService/UploadPhotos',
-            uploadphoto__pb2.PhotoChunk.SerializeToString,
+            uploadphoto__pb2.PhotoRequest.SerializeToString,
             uploadphoto__pb2.UploadStatus.FromString,
             options,
             channel_credentials,
